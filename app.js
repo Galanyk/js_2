@@ -1,39 +1,41 @@
+const calc = function () {
+  let number1;
+  let number2;
+  let operate;
 
-let number1;
-let number2;
-let operate;
-
-function setOperate () {
-  operate = prompt('Введите операцию (+, -, /, *.)');
-}
-
-function setNnumber1 () {
-  number1 = prompt('Введите число');
-}
-
-function setNnumber2 () {
-  number2 = prompt('Введите число');
-}
-
-const resultatOperation = function (operantL1, operantR2, operate) {
-  if (operate === '+' ) {
-    return  operantL1 + operantR2 ;
+  const setOperate = function () {
+    return prompt('Введите операцию (+, -, /, *.)');
   }
-  else if (operate === '-' ) {
-    return  operantL1 - operantR2 ;
+
+  const setNum = function () {
+    return prompt('Введите число');
   }
-  else if (operate === '/' ) {
-    return  operantL1 / operantR2 ;
+
+  const resultatOperation = function (operantL1, operantR2, operate) {
+    console.log(operantL1, operantR2)
+    let result;
+    if (operate === '+') {
+      result = operantL1 + operantR2 ;
+    }
+    else if (operate === '-') {
+      result = operantL1 - operantR2 ;
+    }
+    else if (operate === '/') {
+      result = operantL1 / operantR2 ;
+    }
+    else if (operate === '*') {
+      result = operantL1 * operantR2 ;
+    }  
+    return result;
   }
-  else if (operate === '*' ) {
-    return  operantL1 * operantR2 ;
-  }  
+
+  operate = setOperate();
+  number1 = setNum();
+  number2 = setNum();
+
+  const resultat  = resultatOperation (Number(number1) ,Number(number2), operate);
+  console.log(number1, number2, operate);
+  alert(resultat);
 }
 
-setOperate();
-setNnumber1();
-setNnumber2();
-
-const resultat  = resultatOperation (Number(number1) ,Number(number2), operate)
-
-alert(resultat);
+calc ();
